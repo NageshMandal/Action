@@ -1,0 +1,117 @@
+{
+    "name": "HttpService",
+    "version": "1.0.0",
+    "description": "Provides HTTP utilities like URL building, request formatting, file upload, and handling fetch requests.",
+    "author": "Team Shunya.ek",
+    "dependencies": {},
+    "actions": [
+        {
+            "name": "urlBuilder",
+            "description": "Builds a complete URL with query parameters.",
+            "method": "urlBuilder",
+            "parameters": [
+                {
+                    "name": "url",
+                    "type": "string",
+                    "required": true,
+                    "description": "Base URL to which parameters will be appended."
+                },
+                {
+                    "name": "params",
+                    "type": "object",
+                    "required": true,
+                    "description": "Query parameters to be appended to the URL."
+                }
+            ],
+            "output": "string"
+        },
+        {
+            "name": "requestBuilder",
+            "description": "Constructs a request object for fetch API.",
+            "method": "requestBuilder",
+            "parameters": [
+                {
+                    "name": "method",
+                    "type": "string",
+                    "required": true,
+                    "description": "HTTP method of the request."
+                },
+                {
+                    "name": "headers",
+                    "type": "object",
+                    "required": false,
+                    "description": "Headers to be included in the request."
+                },
+                {
+                    "name": "body",
+                    "type": "string",
+                    "required": false,
+                    "description": "Request body in string format."
+                }
+            ],
+            "output": "object"
+        },
+        {
+            "name": "FileUpload",
+            "description": "Handles the file upload process.",
+            "method": "FileUpload",
+            "parameters": [
+                {
+                    "name": "file",
+                    "type": "object",
+                    "required": true,
+                    "description": "File object to be uploaded."
+                }
+            ],
+            "output": "string"
+        },
+        {
+            "name": "fetchRequest",
+            "description": "Performs a fetch request using the provided URL and request object.",
+            "method": "fetchRequest",
+            "parameters": [
+                {
+                    "name": "url",
+                    "type": "string",
+                    "required": true,
+                    "description": "URL to which the request is sent."
+                },
+                {
+                    "name": "request",
+                    "type": "object",
+                    "required": true,
+                    "description": "Request object as per fetch API specifications."
+                }
+            ],
+            "output": "object"
+        },
+        {
+            "name": "buildEncodedUri",
+            "description": "Encodes a given object into URI format.",
+            "method": "buildEncodedUri",
+            "parameters": [
+                {
+                    "name": "request",
+                    "type": "object",
+                    "required": true,
+                    "description": "Object containing data to be encoded into URI format."
+                }
+            ],
+            "output": "string"
+        },
+        {
+            "name": "unbuildEndodedUri",
+            "description": "Decodes a URI formatted string back into an object.",
+            "method": "unbuildEndodedUri",
+            "parameters": [
+                {
+                    "name": "request",
+                    "type": "string",
+                    "required": true,
+                    "description": "URI formatted string to be decoded."
+                }
+            ],
+            "output": "object"
+        }
+    ]
+}
